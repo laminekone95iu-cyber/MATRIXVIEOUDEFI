@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MATRIX_VIE_OÙ_DÉFI – Écosystème Ultime Quantique</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --gold:#fbbf24; --blue:#0ea5e9; --dark:#020617; }
+    body { font-family:'Inter',sans-serif; background:var(--dark); color:#e2e8f0; overflow-x:hidden; }
+   .orbitron { font-family:'Orbitron',sans-serif; }
+   .gold { color:var(--gold); }
+   .blue { color:var(--blue); }
+   .holo { background:linear-gradient(135deg,rgba(251,191,36,0.1),rgba(14,165,233,0.1)); backdrop-filter:blur(10px); border:1px solid rgba(251,191,36,0.2); }
+   .scan-point { position:absolute; width:14px; height:14px; background:var(--gold); border:2px solid var(--blue); border-radius:50%; cursor:pointer; box-shadow:0 0 15px var(--gold); animation:pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.7} }
+   .tooltip { position:absolute; background:rgba(2,6,23,0.98); border:1px solid var(--gold); padding:10px 14px; border-radius:10px; font-size:13px; display:none; z-index:100; box-shadow:0 0 20px rgba(251,191,36,0.3); }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="relative p-6 border-b border-yellow-500/20">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="orbitron text-2xl md:text-3xl gold">MATRIX_VIE_OÙ_DÉFI</h1>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#scan" class="hover:text-yellow-400">Scan</a>
+        <a href="#defis" class="hover:text-yellow-400">Défis</a>
+        <a href="#quetes" class="hover:text-yellow-400">Quêtes</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative py-20 text-center">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-transparent"></div>
+    <div class="relative max-w-4xl mx-auto px-6">
+      <h2 class="orbitron text-4xl md:text-6xl gold mb-4">ÉCOSYSTÈME ULTIME</h2>
+      <p class="text-xl blue mb-8">Quantique • Spirituel • Terrestre</p>
+      <p class="text-slate-400 max-w-2xl mx-auto">Version BÊTA – Scan interactif mondial. Cliquez sur les points dorés pour révéler les coordonnées exactes.</p>
+    </div>
+  </section>   <!-- SCAN TERRESTRE -->
+  <section id="scan" class="relative max-w-6xl mx-auto my-16 px-6">
+    <div class="holo rounded-3xl p-8">
+      <h3 class="orbitron text-2xl gold mb-6">SCAN TERRESTRE INTERACTIF</h3>
+      <div class="relative bg-slate-950/70 rounded-2xl border border-blue-500/30 h-[550px] overflow-hidden" id="earth-scan">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg" class="w-full h-full object-contain opacity-25" alt="Monde">
+
+        <!-- 4 VILLES DE BASE -->
+        <div class="scan-point" style="left:48.2%; top:41.5%;" data-city="Paris" data-lat="48.8566" data-lng="2.3522" data-pays="France"></div>
+        <div class="scan-point" style="left:25.1%; top:48.3%;" data-city="Bamako" data-lat="12.6392" data-lng="-8.0029" data-pays="Mali"></div>
+        <div class="scan-point" style="left:22.5%; top:37.8%;" data-city="New York" data-lat="40.7128" data-lng="-74.0060" data-pays="USA"></div>
+        <div class="scan-point" style="left:85.3%; top:40.1%;" data-city="Tokyo" data-lat="35.6764" data-lng="139.6500" data-pays="Japon"></div>
+
+        <div id="tooltip" class="tooltip"></div>
+      </div>
+      <div class="mt-4 flex justify-between text-xs text-slate-500">
+        <span>4 points actifs • Prêt pour 40 000 villes</span>
+        <span class="blue">Cliquez pour coordonnées</span>
+      </div>
+    </div>
+  </section>   <!-- DÉFIS -->
+  <section id="defis" class="max-w-6xl mx-auto px-6 my-16">
+    <h3 class="orbitron text-2xl gold mb-8">DÉFIS ACTIFS</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="holo rounded-2xl p-6"><h4 class="blue font-semibold mb-2">Défi Quantique</h4><p class="text-sm text-slate-400">Synchronisation énergétique globale</p></div>
+      <div class="holo rounded-2xl p-6"><h4 class="blue font-semibold mb-2">Défi Terrestre</h4><p class="text-sm text-slate-400">Cartographie des points vitaux</p></div>
+      <div class="holo rounded-2xl p-6"><h4 class="blue font-semibold mb-2">Défi Spirituel</h4><p class="text-sm text-slate-400">Élévation collective</p></div>
+    </div>
+  </section>
+
+  <!-- QUÊTES -->
+  <section id="quetes" class="max-w-6xl mx-auto px-6 my-16">
+    <h3 class="orbitron text-2xl gold mb-8">QUÊTES SPIRITUELLES</h3>
+    <div class="holo rounded-2xl p-8 text-center">
+      <p class="text-slate-300">Système de quêtes en développement – Version BÊTA</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-yellow-500/10 py-10 text-center">
+    <p class="orbitron gold text-lg mb-2">MATRIX_VIE_OÙ_DÉFI</p>
+    <p class="text-xs text-slate-600">© 2026 Papis Hamza • Écosystème Ultime Quantique</p>
+  </footer>
+
+  <script>
+    const points = document.querySelectorAll('.scan-point');
+    const tooltip = document.getElementById('tooltip');
+
+    points.forEach(p => {
+      p.addEventListener('click', (e) => {
+        const city = p.dataset.city;
+        const lat = p.dataset.lat;
+        const lng = p.dataset.lng;
+        const pays = p.dataset.pays;
+        tooltip.innerHTML = `<strong class="gold">${city}</strong> <span class="text-slate-500">(${pays})</span><br><span class="blue">Lat:</span> ${lat} <br><span class="blue">Lng:</span> ${lng}`;
+        tooltip.style.left = Math.min(e.pageX + 15, window.innerWidth - 200) + 'px';
+        tooltip.style.top = (e.pageY - 60) + 'px';
+        tooltip.style.display = 'block';
+        setTimeout(() => tooltip.style.display = 'none', 4000);
+      });
+    });
+
+    // FUTUR : charger cities.json
+    // fetch('cities.json').then(r=>r.json()).then(data=>{... })
+  </script>
+</body>
+</html>
