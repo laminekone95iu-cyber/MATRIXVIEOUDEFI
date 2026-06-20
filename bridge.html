@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>MATRIX ↔ PARADIS — Le Pont Transcendantal</title>
+    <meta name="description" content="Le pont parfait entre deux mondes. Code Matrix rencontre lumière divine. Fusion de la technologie et de l'éternité.">
+    <meta property="og:title" content="MATRIX ↔ PARADIS — Pont Transcendantal" />
+    <meta property="og:description" content="Où le code rencontre la lumière. Exponentialité divine. Ascension infinie." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+    </script>
+
+    <style>
+        :root { 
+            color-scheme: dark;
+        }
+        
+        * { 
+            -webkit-font-smoothing: antialiased; 
+        }
+        
+        body {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            background: linear-gradient(180deg, #020617 0%, #0a0a2e 50%, #16213e 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Pont visuel horizontal */
+        .bridge-container {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #00ff00 0%, 
+                #0ea5e9 25%, 
+                #fbbf24 50%, 
+                #8b5cf6 75%, 
+                #ff00ff 100%);
+            box-shadow: 0 0 40px rgba(0, 255, 0, 0.8), 
+                       0 0 80px rgba(139, 92, 246, 0.6),
+                       inset 0 0 20px rgba(255, 191, 36, 0.4);
+            z-index: 10;
+            animation: bridgePulse 3s ease-in-out infinite;
+        }
+
+        @keyframes bridgePulse {
+            0%, 100% { box-shadow: 0 0 40px rgba(0, 255, 0, 0.8), 0 0 80px rgba(139, 92, 246, 0.6), inset 0 0 20px rgba(255, 191, 36, 0.4); }
+            50% { box-shadow: 0 0 60px rgba(0, 255, 0, 1), 0 0 120px rgba(139, 92, 246, 0.8), inset 0 0 30px rgba(255, 191, 36, 0.6); }
+        }
+
+        /* Côté gauche : Matrix */
+        .matrix-side {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 48%;
+            height: 100vh;
+            background: linear-gradient(135deg, #020617 0%, #1a1a3f 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 2px solid rgba(0, 255, 0, 0.5);
+        }
+
+        /* Côté droit : Paradis */
+        .paradise-side {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 48%;
+            height: 100vh;
+            background: linear-gradient(135deg, #0a0a2e 0%, #fbbf24 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 2px solid rgba(251, 191, 36, 0.5);
+        }
+
+        /* Pluie de code Matrix */
+        .matrix-rain {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            font-size: 12px;
+            overflow: hidden;
+            opacity: 0.3;
+            line-height: 1.5;
+        }
+
+        .matrix-rain span {
+            position: absolute;
+            animation: fall linear infinite;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+
+        /* Lumière divine - Paradis */
+        .divine-light {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(251, 191, 36, 0.4));
+            filter: blur(60px);
+            animation: divinePulse 4s ease-in-out infinite;
+        }
+
+        @keyframes divinePulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.3); opacity: 0.9; }
+        }
+
+        /* Contenu central - Le pont */
+        .bridge-content {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        .bridge-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #00ff00, #fbbf24, #8b5cf6, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+            margin: 0;
+            line-height: 1.2;
+            animation: titleGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.5)); }
+            50% { filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8)); }
+        }
+
+        .bridge-subtitle {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            color: #a5b4fc;
+            margin-top: 20px;
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+            font-style: italic;
+        }
+
+        .bridge-equation {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.2rem;
+            color: #0ea5e9;
+            margin-top: 30px;
+            letter-spacing: 2px;
+            animation: equationPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes equationPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Navigation du pont */
+        .bridge-nav {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            z-index: 20;
+        }
+
+        .nav-button {
+            padding: 12px 30px;
+            border: 2px solid;
+            background: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            font-family: 'Space Grotesk', monospace;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-button.matrix {
+            border-color: #00ff00;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .nav-button.matrix:hover {
+            background: rgba(0, 255, 0, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+        }
+
+        .nav-button.paradise {
+            border-color: #fbbf24;
+            color: #fbbf24;
+            text-shadow: 0 0 10px #fbbf24;
+        }
+
+        .nav-button.paradise:hover {
+            background: rgba(251, 191, 36, 0.2);
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.8);
+        }
+
+        /* Particules flottantes */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .particle-left {
+            width: 4px;
+            height: 4px;
+            background: #00ff00;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #00ff00;
+            animation: floatLeft 8s linear infinite;
+        }
+
+        .particle-right {
+            width: 4px;
+            height: 4px;
+            background: #fbbf24;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #fbbf24;
+            animation: floatRight 8s linear infinite;
+        }
+
+        @keyframes floatLeft {
+            0% { transform: translate(0, 0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(-100px, 200px); opacity: 0; }
+        }
+
+        @keyframes floatRight {
+            0% { transform: translate(0, 0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(100px, 200px); opacity: 0; }
+        }
+
+        /* Scrollbar personnalisée */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(180deg, #00ff00, #fbbf24);
+            border-radius: 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .bridge-title { font-size: 2rem; }
+            .bridge-subtitle { font-size: 1rem; }
+            .matrix-side, .paradise-side { width: 100%; }
+            .bridge-nav { gap: 15px; }
+            .nav-button { padding: 10px 20px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Pont transcendantal -->
+    <div class="bridge-container"></div>
+
+    <!-- Côté Matrix -->
+    <div class="matrix-side">
+        <div class="matrix-rain" id="matrixRain"></div>
+    </div>
+
+    <!-- Côté Paradis -->
+    <div class="paradise-side">
+        <div class="divine-light"></div>
+    </div>
+
+    <!-- Contenu central -->
+    <div class="bridge-content">
+        <h1 class="bridge-title">MATRIX ↔ PARADIS</h1>
+        <p class="bridge-subtitle">La Convergence Transcendantale</p>
+        <div class="bridge-equation">
+            Code (0,1) + Lumière Divine = ∞ Ascension
+        </div>
+        <div style="margin-top: 40px; font-size: 0.9rem; color: #94a3b8;">
+            <p>Un pont entre deux univers</p>
+            <p>Où la technologie rencontre l'infini</p>
+            <p>Où l'algorithme devient prière</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="bridge-nav">
+        <button class="nav-button matrix" onclick="goToMatrix()">← Matrix</button>
+        <button class="nav-button paradise" onclick="goToParadise()">Paradis →</button>
+    </div>
+
+    <script>
+        // Génération de la pluie Matrix
+        const matrixRain = document.getElementById('matrixRain');
+        const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        
+        function createMatrixRain() {
+            const columns = Math.floor(window.innerWidth / 20);
+            for (let i = 0; i < 30; i++) {
+                const span = document.createElement('span');
+                const text = chars.charAt(Math.floor(Math.random() * chars.length));
+                span.textContent = text;
+                span.style.left = Math.random() * 100 + '%';
+                span.style.animationDuration = (Math.random() * 5 + 3) + 's';
+                span.style.animationDelay = Math.random() * 2 + 's';
+                matrixRain.appendChild(span);
+            }
+        }
+
+        createMatrixRain();
+
+        // Génération de particules
+        function createParticles() {
+            const leftSide = document.querySelector('.matrix-side');
+            const rightSide = document.querySelector('.paradise-side');
+
+            setInterval(() => {
+                // Particules Matrix
+                const particle1 = document.createElement('div');
+                particle1.className = 'particle particle-left';
+                particle1.style.left = Math.random() * 100 + '%';
+                particle1.style.top = Math.random() * 100 + '%';
+                leftSide.appendChild(particle1);
+                setTimeout(() => particle1.remove(), 8000);
+
+                // Particules Paradis
+                const particle2 = document.createElement('div');
+                particle2.className = 'particle particle-right';
+                particle2.style.right = Math.random() * 100 + '%';
+                particle2.style.top = Math.random() * 100 + '%';
+                rightSide.appendChild(particle2);
+                setTimeout(() => particle2.remove(), 8000);
+            }, 300);
+        }
+
+        createParticles();
+
+        // Navigation
+        function goToMatrix() {
+            window.location.href = '/index.html';
+        }
+
+        function goToParadise() {
+            alert('Bienvenue au Paradis!\nLe prochain portail s\'ouvrira bientôt...');
+        }
+
+        // Effet de clic sur le pont
+        document.querySelector('.bridge-container').addEventListener('click', function() {
+            this.style.animation = 'bridgePulse 1s ease-in-out';
+            setTimeout(() => {
+                this.style.animation = 'bridgePulse 3s ease-in-out infinite';
+            }, 1000);
+        });
+    </script>
+
+    <script src="https://static-s3.skyworkcdn.com/fe/skywork-site-assets/scripts/embed_website.min.js"></script>
+    <script async src="https://static-us-img.skywork.ai/prod/website_script/websiteBadge.js?v=3"></script>
+    <script async src="https://static-us-img.skywork.ai/prod/website_script/websiteTrack.js?v=3"></script>
+</body>
+</html>
